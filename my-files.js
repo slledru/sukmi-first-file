@@ -68,7 +68,7 @@ function addFruit(type, count, filename='things.csv') {
       newLines.push(`${key},${lines[key]}`)
     })
     const writeMe =  newLines.join('\n')
-    fs.writeFile(filename, writeMe, { encoding : 'utf8', flag : 'w' }, (err) => {
+    fs.writeFile(filename, writeMe, { encoding : 'binary', flag : 'w' }, (err) => {
       if (err) {
         console.log(red(err))
         return
