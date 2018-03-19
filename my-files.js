@@ -1,4 +1,4 @@
-const { red, yellow } = require('chalk')
+const { red, yellow, cyan } = require('chalk')
 const path = require('path')
 const fs = require('fs')
 
@@ -17,12 +17,30 @@ const filename = path.join(__dirname, 'test.txt')
 //
 // console.log(yellow('Hello!'));
 
-fs.readFile(filename, 'utf8', (err, data) => {
+// fs.readFile(filename, 'utf8', (err, data) => {
+//   if (err) {
+//     console.log(red(err))
+//     return
+//   }
+//
+//   const lines = data
+//     .split('\n')
+//     .filter(x => x.length > 0)
+//     .map((line, index) => `${index}: ${line}`)
+//   console.log(lines);
+// })
+
+// try {
+//   const syncContents = fs.readFileSync('23eq2r323r23r', 'utf8')
+//   console.log(cyan(syncContents));
+// } catch (err) {
+//   console.log(red(err));
+// }
+
+fs.unlink(filename, (err) => {
   if (err) {
     console.log(red(err))
     return
   }
-
-  const lines = data.split('\n').filter(x => x.length > 0)
-  console.log(lines);
+  console.log('file has been deleted');
 })
