@@ -2,17 +2,27 @@ const { red, yellow } = require('chalk')
 const path = require('path')
 const fs = require('fs')
 
-// const filename = path.join(__dirname, 'test.txt')
-//
+const filename = path.join(__dirname, 'test.txt')
+
 // console.log(red('Hello'));
 // console.log(yellow(filename));
 
-fs.readdir(__dirname, (err, files) => {
-  if (err) {
-    console.log(red(err));
-  } else {
-    console.log(files);
-  }
-})
+// fs.readdir(__dirname, (err, files) => {
+//   if (err) {
+//     console.log(red(err));
+//   } else {
+//     console.log(files);
+//   }
+// })
+//
+// console.log(yellow('Hello!'));
 
-console.log(yellow('Hello!'));
+fs.readFile(filename, 'utf8', (err, data) => {
+  if (err) {
+    console.log(red(err))
+    return
+  }
+
+  const lines = data.split('\n').filter(x => x.length > 0)
+  console.log(lines);
+})
