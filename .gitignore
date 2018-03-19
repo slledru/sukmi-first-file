@@ -59,3 +59,6 @@ typings/
 
 # MacOS junk
 .DS_Store
+
+# npm
+package-lock.json

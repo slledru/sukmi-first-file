@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/slledru/sukmi-first-file/issues"
   },
-  "homepage": "https://github.com/slledru/sukmi-first-file#readme"
+  "homepage": "https://github.com/slledru/sukmi-first-file#readme",
+  "dependencies": {
+    "chalk": "^2.3.2"
+  }
 }
